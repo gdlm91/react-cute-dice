@@ -9,7 +9,7 @@ import {
   faDiceSix,
 } from "@fortawesome/free-solid-svg-icons";
 import "./CuteDice.css";
-import { DiceValues } from "./types";
+import { Colors, DiceValues } from "./types";
 import { generateRandomInt } from "./utils/generateRandomInt";
 
 interface Props {
@@ -17,6 +17,7 @@ interface Props {
   value: DiceValues;
   isRolling?: boolean;
   disabled?: boolean;
+  colors?: Colors;
 }
 
 const ControlledCuteDice: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const ControlledCuteDice: React.FC<Props> = ({
   onClick,
   disabled = false,
   isRolling = false,
+  colors = {} as Colors,
 }) => {
   const diceIcon = {
     1: <FontAwesomeIcon icon={faDiceOne} />,
@@ -57,14 +59,17 @@ const ControlledCuteDice: React.FC<Props> = ({
     };
   }, [isRolling]);
 
+  const showingValue: DiceValues = rollingValue || value || 1;
+
   return (
     <div className="Dice">
       <button
-        className={`dice d-${rollingValue || value}`}
+        className={`dice d-${showingValue}`}
+        style={colors[showingValue] ? { color: colors[showingValue] } : {}}
         onClick={onClick}
         disabled={disabled}
       >
-        {diceIcon[rollingValue || value || 1]}
+        {diceIcon[showingValue]}
       </button>
     </div>
   );
