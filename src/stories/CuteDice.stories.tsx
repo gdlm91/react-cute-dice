@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from "@storybook/react/types-6-0";
+import { Story, Meta } from '@storybook/react/types-6-0';
 
-import CuteDice, { DiceValues } from "../index";
+import CuteDice, { DiceValues } from '../index';
 
 export default {
-  title: "CuteDice",
+  title: 'CuteDice',
   component: CuteDice,
 } as Meta;
 
@@ -42,10 +42,7 @@ export const Colors: Story = () => {
       <div>Rolling: {`${rolling}`}</div>
       <div>Value: {value}</div>
 
-      <CuteDice
-        onChange={handleOnChange}
-        colors={{ 1: "black", 2: "blue", 3: "#ff87f9", 4: "#29d5db" }}
-      />
+      <CuteDice onChange={handleOnChange} colors={{ 1: 'black', 2: 'blue', 3: '#ff87f9', 4: '#29d5db' }} />
     </>
   );
 };

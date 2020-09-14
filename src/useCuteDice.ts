@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { generateRandomInt } from ".";
-import { DiceValues } from "./types";
+import { useState } from 'react';
+import { generateRandomInt } from '.';
+import { DiceValues } from './types';
 
 export const useCuteDice = () => {
   const [value, setValue] = useState<DiceValues>(1);
   const [isRolling, setIsRolling] = useState(false);
 
   const diceRoll = () => {
-    let rolls = generateRandomInt(5, 15);
+    const rolls = generateRandomInt(5, 15);
 
     for (let rollsLeft = rolls; rollsLeft >= 0; rollsLeft--) {
       setTimeout(() => {

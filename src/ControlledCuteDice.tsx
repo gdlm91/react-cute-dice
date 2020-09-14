@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faDiceOne,
-  faDiceTwo,
-  faDiceThree,
-  faDiceFour,
-  faDiceFive,
-  faDiceSix,
-} from "@fortawesome/free-solid-svg-icons";
-import "./CuteDice.css";
-import { Colors, DiceValues } from "./types";
-import { generateRandomInt } from "./utils/generateRandomInt";
+import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiceOne, faDiceTwo, faDiceThree, faDiceFour, faDiceFive, faDiceSix } from '@fortawesome/free-solid-svg-icons';
+import './CuteDice.css';
+import { Colors, DiceValues } from './types';
+import { generateRandomInt } from './utils/generateRandomInt';
 
 interface Props {
   onClick: () => void;
@@ -20,13 +13,7 @@ interface Props {
   colors?: Colors;
 }
 
-const ControlledCuteDice: React.FC<Props> = ({
-  value,
-  onClick,
-  disabled = false,
-  isRolling = false,
-  colors = {} as Colors,
-}) => {
+const ControlledCuteDice: React.FC<Props> = ({ value, onClick, disabled = false, isRolling = false, colors = {} as Colors }) => {
   const diceIcon = {
     1: <FontAwesomeIcon icon={faDiceOne} />,
     2: <FontAwesomeIcon icon={faDiceTwo} />,
@@ -40,8 +27,6 @@ const ControlledCuteDice: React.FC<Props> = ({
 
   // Rolling logic
   useEffect(() => {
-    let interval: ReturnType<typeof setInterval>;
-
     if (isRolling === false) {
       setTimeout(() => {
         setRollingValue(undefined);
@@ -50,7 +35,7 @@ const ControlledCuteDice: React.FC<Props> = ({
       return;
     }
 
-    interval = setInterval(() => {
+    const interval = setInterval(() => {
       setRollingValue(generateRandomInt(1, 6) as DiceValues);
     }, 250);
 
