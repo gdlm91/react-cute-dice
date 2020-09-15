@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "start": "run-s build:esm watch",
-    "build": "run-p build:esm build:cjs build:storybook",
+    "build": "run-p build:esm build:cjs",
     "build:esm": "tsc -p tsconfig.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:storybook": "build-storybook -o docs",
