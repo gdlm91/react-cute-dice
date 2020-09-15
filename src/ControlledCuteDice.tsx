@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiceOne, faDiceTwo, faDiceThree, faDiceFour, faDiceFive, faDiceSix } from '@fortawesome/free-solid-svg-icons';
-import './CuteDice.css';
 import { Colors, DiceValues } from './types';
 import { generateRandomInt } from './utils/generateRandomInt';
 
@@ -11,9 +10,17 @@ interface Props {
   isRolling?: boolean;
   disabled?: boolean;
   colors?: Colors;
+  className?: string;
 }
 
-const ControlledCuteDice: React.FC<Props> = ({ value, onClick, disabled = false, isRolling = false, colors = {} as Colors }) => {
+const ControlledCuteDice: React.FC<Props> = ({
+  value,
+  onClick,
+  disabled = false,
+  isRolling = false,
+  colors = {} as Colors,
+  className = '',
+}) => {
   const diceIcon = {
     1: <FontAwesomeIcon icon={faDiceOne} />,
     2: <FontAwesomeIcon icon={faDiceTwo} />,
@@ -22,6 +29,25 @@ const ControlledCuteDice: React.FC<Props> = ({ value, onClick, disabled = false,
     5: <FontAwesomeIcon icon={faDiceFive} />,
     6: <FontAwesomeIcon icon={faDiceSix} />,
   };
+
+  const style = {
+    background: 'none',
+    border: 'none',
+    fontSize: '60px',
+    transitionDuration: ' 0.2s',
+    transitionProperty: 'color',
+  };
+
+  const defaultColors = {
+    1: '#a405d4',
+    2: '#34ebff',
+    3: '#00d51b',
+    4: '#f6db35',
+    5: '#f88400',
+    6: '#df3100',
+  };
+
+  const mergedColors = { ...defaultColors, ...colors };
 
   const [rollingValue, setRollingValue] = useState<DiceValues>();
 
@@ -47,16 +73,9 @@ const ControlledCuteDice: React.FC<Props> = ({ value, onClick, disabled = false,
   const showingValue: DiceValues = rollingValue || value || 1;
 
   return (
-    <div className="Dice">
-      <button
-        className={`dice d-${showingValue}`}
-        style={colors[showingValue] ? { color: colors[showingValue] } : {}}
-        onClick={onClick}
-        disabled={disabled}
-      >
-        {diceIcon[showingValue]}
-      </button>
-    </div>
+    <button className={className} style={{ ...style, color: mergedColors[showingValue] }} onClick={onClick} disabled={disabled}>
+      {diceIcon[showingValue]}
+    </button>
   );
 };
 
