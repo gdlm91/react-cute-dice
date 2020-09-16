@@ -2,6 +2,22 @@
   "name": "react-cute-dice",
   "version": "0.2.0",
   "license": "MIT",
+  "homepage": "https://gdlm91.github.io/react-cute-dice/",
+  "repository": {
+    "url": "https://github.com/gdlm91/react-cute-dice",
+    "type": "git"
+  },
+  "contributors": [
+    {
+      "name": "Gerardo Leal",
+      "email": "gerard.leal91@gmail.com"
+    },
+    {
+      "name": "Cinthia Valero",
+      "email": "cinthia.j.23@gmail.com",
+      "url": "https://cinthialandia.com/"
+    }
+  ],
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
