@@ -50,10 +50,10 @@ export const ExampleDice: React.FC = () => {
 
 Demo: https://gdlm91.github.io/react-cute-dice/?path=/story/cutedice--default
 
-- **onChange**: Pass a callback to be notified when the value of the dice changed and if it's rolling.
-- **disable** : (optional) Set the dice as disabled which means it won't roll if you click it.
-- **colors**: (optional) An object with six colors, one for each number of the dice. This is optional, sinc the dice comes with default colors.
-- **className**: (optional) If you ever need to customize the dice, or query for testing, set a class name to identify it.
+- **onChange**: a callback to be notified when the value of the dice changed and if it's rolling.
+- **disabled** : (optional) sets the dice as disabled which means it won't roll if you click it.
+- **colors**: (optional) an object with six colors, one for each number of the dice. This is optional, sinc the dice comes with default colors.
+- **className**: (optional) if you ever need to customize the dice, or query for testing, set a class name to identify it.
 
 ### ControlledDice
 
@@ -89,12 +89,12 @@ export const ExampleControlledDice: React.FC = () => {
 
 Demo: https://gdlm91.github.io/react-cute-dice/?path=/story/controlleddice--controlled
 
-- **onclick**: Is a function that is executed when the dice is clicked
+- **onClick**: a callback to execute when the dice is clicked.
 - **value**: the value of the dice.
-- **isRolling**: (optional) will make the dice a random number until is false.
-- **disable** : (optional) Sets the dice as disabled which means it won't roll if you click it.
-- **colors**: (optional) An object with the six colors that the dice need, this is optional and you can use de default colors.
-- **className**: (optional) Is a class that you can add to your dice in order to identify it.
+- **isRolling**: (optional) will make the dice roll and show a random number until is set to false.
+- **disabled** : (optional) sets the dice as disabled which means it won't roll if you click it.
+- **colors**: (optional) an object with six colors, one for each number of the dice. This is optional, sinc the dice comes with default colors.
+- **className**: (optional) if you ever need to customize the dice, or query for testing, set a class name to identify it.
 
 ## useDice (Hook)
 
