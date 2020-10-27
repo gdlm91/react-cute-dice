@@ -1,6 +1,6 @@
 {
   "name": "react-cute-dice",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
   "homepage": "https://gdlm91.github.io/react-cute-dice/",
   "repository": {
@@ -18,7 +18,14 @@
       "url": "https://cinthialandia.com/"
     }
   ],
-  "keywords": ["dice", "react", "typescript", "javascript", "cute dice", "roll"],
+  "keywords": [
+    "dice",
+    "react",
+    "typescript",
+    "javascript",
+    "cute dice",
+    "roll"
+  ],
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
