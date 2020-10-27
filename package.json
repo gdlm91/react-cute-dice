@@ -18,6 +18,7 @@
       "url": "https://cinthialandia.com/"
     }
   ],
+  "keywords": ["dice", "react", "typescript", "javascript", "cute dice", "roll"],
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
